@@ -27,7 +27,7 @@ function get_distro {
   while read -r line; do
       if [[ $line =~ ^(NAME|DISTRIB_ID)=(.+)$ ]]; then
       distro_str=${BASH_REMATCH[2]}
-      if echo "$distro_str" | grep -qP '(?i).*(ubuntu|mint).*'; then
+      if echo "$distro_str" | grep -qP '(?i).*(ubuntu|mint|neon).*'; then
         distro_name='ubuntu'
       elif echo "$distro_str" | grep -qP '(?i).*fedora.*'; then
         distro_name='fedora'
